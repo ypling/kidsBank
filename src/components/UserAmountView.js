@@ -9,7 +9,7 @@ const UserAmountView = ({ name, amount }) => {
     const ease = { value: displayAmount }
     let interval
     const tween = new TWEEN.Tween(ease).to({ value: amount }, 800).
-      easing(TWEEN.Easing.Linear.None).
+      easing(TWEEN.Easing.Quadratic.Out).
       onUpdate(() => {
         setDisplayAmount(Math.floor(ease.value))
       }).
@@ -20,8 +20,8 @@ const UserAmountView = ({ name, amount }) => {
     interval = setInterval(() => {
       console.log('interval')
       tween.update()
-    }, 50)
-  }, [])
+    }, 20)
+  }, [amount])
   return (
     <Grid item>
       <Card sx={{ maxWidth: 500, bgcolor: 'primary.light' }}>
