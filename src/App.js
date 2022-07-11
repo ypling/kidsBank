@@ -10,11 +10,11 @@ const App = () => {
         <Grid container direction="column" spacing={1}>
           <UserAmountView
             name={'Jackson'}
-            amount={2}
+            amount={3}
           />
           <UserAmountView
             name={'Jacob'}
-            amount={3}
+            amount={4}
           />
         </Grid>
       </Box>
