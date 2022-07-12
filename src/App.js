@@ -8,6 +8,8 @@ const App = () => {
 
   useEffect(() => {
     axios.get('https://kids-bank-ypling.herokuapp.com/amount').then(res => {
+      res.data[0].bgImgSrc = 'https://wallpaper.dog/large/20517298.jpg'
+      res.data[1].bgImgSrc = 'https://wallpaperaccess.com/full/477608.jpg'
       setAmountData(res.data)
     })
   },[])
