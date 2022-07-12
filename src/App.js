@@ -7,12 +7,8 @@ const App = () => {
   const [amountData, setAmountData] = useState([])
 
   useEffect(() => {
-    setAmountData([
-      {id:1, name: 'Jackson', amount: 3, bgImgSrc: 'https://wallpaper.dog/large/20517298.jpg'},
-      {id:2, name: 'Jacob', amount: 4, bgImgSrc:'https://wallpaperaccess.com/full/477608.jpg'},
-    ])
-    axios.get('https://kids-bank-ypling.herokuapp.com/amount', ).then(res => {
-      console.log(res.data)
+    axios.get('https://kids-bank-ypling.herokuapp.com/amount').then(res => {
+      setAmountData(res.data)
     })
   },[])
 
