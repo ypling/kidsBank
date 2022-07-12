@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Grid,
+  Typography,
+} from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
 import TWEEN from '@tweenjs/tween.js'
 
-const UserAmountView = ({ name, amount }) => {
+const UserAmountView = ({ name, amount, bgImgSrc }) => {
   const [displayAmount, setDisplayAmount] = useState(0)
   useEffect(() => {
     const ease = { value: displayAmount }
@@ -18,13 +25,18 @@ const UserAmountView = ({ name, amount }) => {
       }).
       start()
     interval = setInterval(() => {
-      console.log('interval')
       tween.update()
     }, 20)
   }, [amount])
   return (
-    <Grid item>
-      <Card sx={{ maxWidth: 500, bgcolor: 'primary.light' }}>
+    <Grid item xs>
+      <Card sx={{ bgcolor: 'primary.light', height: '100%' }}>
+        <CardMedia
+          component="img"
+          height="160"
+          image={bgImgSrc}
+          alt="shark background"
+        />
         <CardHeader title={name}
                     titleTypographyProps={{ color: 'primary.contrastText' }}/>
         <CardContent>
