@@ -6,13 +6,14 @@ import {
 } from "react-router-dom"
 import HomeContainer from './components/HomeContainer'
 import AdminContainer from './components/AdminContainer'
+import { ADMIN, HOME } from './constants/Pathnames'
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-          <Route index element={<HomeContainer/>} />
-          <Route path="/admin" exact element={<AdminContainer/>}/>
+          <Route path={HOME} element={<HomeContainer/>} />
+          <Route path={ADMIN} exact element={<AdminContainer/>}/>
       </Routes>
     </BrowserRouter>
   )

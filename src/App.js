@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { Box, CssBaseline, Grid } from '@mui/material'
-import UserAmountView from './components/UserAmountView'
 import Router from './Router'
 
 const App = () => {

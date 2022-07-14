@@ -5,6 +5,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'main.js'),
   output: {
     path: path.resolve(__dirname, 'docs'),
+    publicPath: '/kidsBank'
   },
 
   plugins: [
@@ -29,6 +30,8 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    historyApiFallback: true
+    historyApiFallback: {
+      index: '/kidsBank/index.html'
+    }
   }
 }
